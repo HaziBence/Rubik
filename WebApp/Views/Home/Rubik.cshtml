@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Rubik";
+}
+
+@model WebApp.Models.HomeModel
+
+<style>
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 80px;
+}
+
+.forgat90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.forgat180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.forgat270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+</style>
+
+<h2>Rubik</h2>
+
+<div class="center">
+    <div>
+        <img width="150" height="150" src="@Model.mezok[0, 0].Path" class="@Model.forgatasok[0, 0]" />
+        <img width="150" height="150" src="@Model.mezok[0, 1].Path" class="@Model.forgatasok[0, 1]"/>
+        <img width="150" height="150" src="@Model.mezok[0, 2].Path" class="@Model.forgatasok[0, 2]" />
+    </div>
+    <div>
+        <img width="150" height="150" src="@Model.mezok[1, 0].Path" class="@Model.forgatasok[1, 0]" />
+        <img width="150" height="150" src="@Model.mezok[1, 1].Path" class="@Model.forgatasok[1, 1]" />
+        <img width="150" height="150" src="@Model.mezok[1, 2].Path" class="@Model.forgatasok[1, 2]" />
+    </div>
+    <div>
+        <img width="150" height="150" src="@Model.mezok[2, 0].Path" class="@Model.forgatasok[2, 0]" />
+        <img width="150" height="150" src="@Model.mezok[2, 1].Path" class="@Model.forgatasok[2, 1]" />
+        <img width="150" height="150" src="@Model.mezok[2, 2].Path" class="@Model.forgatasok[2, 2]" />
+    </div>
+</div>

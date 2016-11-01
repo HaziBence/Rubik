@@ -1,0 +1,8 @@
+d:\Projektek\C#\BacktrackRubik\BacktrackRubik\bin\Debug\BacktrackRubik.exe.config
+d:\Projektek\C#\BacktrackRubik\BacktrackRubik\bin\Debug\BacktrackRubik.exe
+d:\Projektek\C#\BacktrackRubik\BacktrackRubik\bin\Debug\BacktrackRubik.pdb
+d:\Projektek\C#\BacktrackRubik\BacktrackRubik\obj\Debug\BacktrackRubik.exe
+d:\Projektek\C#\BacktrackRubik\BacktrackRubik\obj\Debug\BacktrackRubik.pdb
+d:\Projektek\C#\BacktrackRubik\BacktrackRubik\obj\Debug\BacktrackRubik.csprojResolveAssemblyReference.cache
+d:\Projektek\C#\BacktrackRubik\BacktrackRubik\bin\Debug\Rubik.dll
+d:\Projektek\C#\BacktrackRubik\BacktrackRubik\bin\Debug\Rubik.pdb

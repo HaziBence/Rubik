@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacktrackRubik", "BacktrackRubik\BacktrackRubik.csproj", "{264023DF-6A19-492C-BA93-9549DB1AB98A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rubik", "Rubik\Rubik.csproj", "{3F2E6DB4-DDCF-452C-8C34-E9CD3723CEC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{96E7C45A-69E4-421C-A600-1CA6AF4F3061}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{264023DF-6A19-492C-BA93-9549DB1AB98A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264023DF-6A19-492C-BA93-9549DB1AB98A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264023DF-6A19-492C-BA93-9549DB1AB98A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264023DF-6A19-492C-BA93-9549DB1AB98A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F2E6DB4-DDCF-452C-8C34-E9CD3723CEC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F2E6DB4-DDCF-452C-8C34-E9CD3723CEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F2E6DB4-DDCF-452C-8C34-E9CD3723CEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F2E6DB4-DDCF-452C-8C34-E9CD3723CEC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E7C45A-69E4-421C-A600-1CA6AF4F3061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E7C45A-69E4-421C-A600-1CA6AF4F3061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E7C45A-69E4-421C-A600-1CA6AF4F3061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E7C45A-69E4-421C-A600-1CA6AF4F3061}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
