@@ -1,32 +1,36 @@
-﻿using Rubik;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BacktrackRubik
+﻿namespace BacktrackRubik
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //Felületek példányosítása
-            LapKeszito lk = new LapKeszito();
-            LapKeszito.Kiiras(lk.feluletek);
+    using System;
+    using Rubik;
 
-            //Forgatások mátrix példányosítása
+    /// <summary>
+    /// Konzolos osztály, amit debuggolás szempontjából készítettem
+    /// </summary>
+    internal class Program
+    {
+        /// <summary>
+        /// Main metódus, ebben példányosítom a feladathoz szükséges osztályokat.
+        /// string[] args-ot nem használtam fel az egész solution alatt.
+        /// </summary>
+        /// <param name="args">Bejövő paraméterek</param>
+        public static void Main(string[] args)
+        {
+            // Felületek példányosítása
+            LapKeszito lk = new LapKeszito();
+            LapKeszito.Kiiras(lk.Feluletek);
+
+            // Forgatások mátrix példányosítása
             Console.WriteLine("forgat:");
             Forgato forgatasok = new Forgato();
-            Forgato.Kiiras(forgatasok.forgatasok);
+            Forgato.Kiiras(forgatasok.Forgatasok);
 
-            //Pálya példányosítása
+            // Pálya példányosítása
             Console.WriteLine("palya:");
             PalyaKeszito palyakeszito = new PalyaKeszito();
-            PalyaKeszito.Kiiras(palyakeszito.palya);
+            PalyaKeszito.Kiiras(palyakeszito.Palya);
 
-            //Megoldáshoz szükséges osztály példányosítása és a Backtrack futtatása
-            Megoldas mo = new Megoldas(lk.feluletek, forgatasok.forgatasok, palyakeszito.palya);
+            // Megoldáshoz szükséges osztály példányosítása és a Backtrack futtatása
+            Megoldas mo = new Megoldas(lk.Feluletek, forgatasok.Forgatasok, palyakeszito.Palya);
             mo.Backtrack();
         }
     }

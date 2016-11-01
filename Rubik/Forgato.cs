@@ -1,77 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Rubik
+﻿namespace Rubik
 {
+    using System;
+
+    /// <summary>
+    /// Ebben az osztályban hozzuk létre a forgatások tömböt amiben egy felületnek a státusza van.
+    /// A forgatások tömbön kívül, van még ForgatEgyFelulet metódus, ami segítségével forgatunk egy felületet. 
+    /// </summary>
     public class Forgato
     {
-        /*Ebben a tömbben tároljuk az adott felületek helyzetét
-          -1 esetén nem használjuk a képet
-          0 esetén a kép nincs elforgatva
-          1 esetén a kép 90 fokkal jobbra el van forgatva
-          2 esetén 180 fokkal van elforgatva jobbra
-          3 esetén 270 fokkal van elforgatva jobbra
-        */
-        public int[] forgatasok { get; }
-
-        //létrehozzuk a tömböt és megadjuk a kezdő értékeit
+        /// <summary>
+        /// <see cref="Forgato"/> osztály konstruktora.
+        /// Létrehozzuk a tömböt és megadjuk a kezdő értékeit.
+        /// Azért 24 a tömb nagysága, mert összesen ennyi felületünk lehet.
+        /// </summary>
         public Forgato()
         {
-            forgatasok = new int[24];
+            this.Forgatasok = new int[24];
 
-            for (int i = 0; i < forgatasok.Length; i++)
+            for (int i = 0; i < this.Forgatasok.Length; i++)
             {
-                forgatasok[i] = -1;
+                this.Forgatasok[i] = -1;
             }
         }
 
         /// <summary>
-        /// A megadott felületet forgatja egyel jobbra
+        /// Ebben a tömbben tároljuk az adott felületek helyzetét
+        /// -1 esetén nem használjuk a képet
+        /// 0 esetén a kép nincs elforgatva
+        /// 1 esetén a kép 90 fokkal jobbra el van forgatva
+        /// 2 esetén 180 fokkal van elforgatva jobbra
+        /// 3 esetén 270 fokkal van elforgatva jobbra
         /// </summary>
-        /// <param name="feluletek"></param>
-        /// <param name="forgatasok"></param>
-        /// <param name="FeluletSzam"></param>
-        public static void Forgat(int[,] feluletek, int[] forgatasok, int FeluletSzam)
-        {
-            if (forgatasok[FeluletSzam] > 0)
-            {
-                //ha már 3szor megforgattuk és most is forgatunk rajta, emiatt visszakerül az alap állapotába
-                if (forgatasok[FeluletSzam] == 3)
-                {
-                    forgatasok[FeluletSzam] = 0;
-                }
-
-                int csere1;
-                int csere2;
-
-                csere1 = feluletek[FeluletSzam, 6];
-                csere2 = feluletek[FeluletSzam, 7];
-
-                feluletek[FeluletSzam, 6] = feluletek[FeluletSzam, 4];
-                feluletek[FeluletSzam, 7] = feluletek[FeluletSzam, 5];
-
-                feluletek[FeluletSzam, 4] = feluletek[FeluletSzam, 2];
-                feluletek[FeluletSzam, 5] = feluletek[FeluletSzam, 3];
-
-                feluletek[FeluletSzam, 2] = feluletek[FeluletSzam, 0];
-                feluletek[FeluletSzam, 3] = feluletek[FeluletSzam, 1];
-
-                feluletek[FeluletSzam, 0] = csere1;
-                feluletek[FeluletSzam, 1] = csere2; 
-            }
-        }
-
+        public int[] Forgatasok { get; }
 
         /// <summary>
         /// Egy felületet forgatunk jobbra.
         /// </summary>
-        /// <param name="felulet"></param>
+        /// <param name="felulet">Egy felülethez tartozó oldalainak színei.</param>
         public static void ForgatEgyFelulet(int[] felulet)
         {
-
             int csere1;
             int csere2;
 
@@ -94,7 +61,7 @@ namespace Rubik
         /// <summary>
         /// Kiírja a forgatások tömb értékeit a konzolra.
         /// </summary>
-        /// <param name="forgatasok"></param>
+        /// <param name="forgatasok">Felületek státuszai</param>
         public static void Kiiras(int[] forgatasok)
         {
             for (int i = 0; i < forgatasok.Length; i++)
@@ -102,6 +69,7 @@ namespace Rubik
                 Console.Write(forgatasok[i]);
                 Console.Write(" ");
             }
+
             Console.WriteLine(Environment.NewLine);
         }
     }

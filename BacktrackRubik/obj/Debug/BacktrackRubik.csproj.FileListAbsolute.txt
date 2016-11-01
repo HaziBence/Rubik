@@ -6,3 +6,11 @@ d:\Projektek\C#\BacktrackRubik\BacktrackRubik\obj\Debug\BacktrackRubik.pdb
 d:\Projektek\C#\BacktrackRubik\BacktrackRubik\obj\Debug\BacktrackRubik.csprojResolveAssemblyReference.cache
 d:\Projektek\C#\BacktrackRubik\BacktrackRubik\bin\Debug\Rubik.dll
 d:\Projektek\C#\BacktrackRubik\BacktrackRubik\bin\Debug\Rubik.pdb
+C:\Users\Bence\Source\Repos\Rubik\BacktrackRubik\bin\Debug\BacktrackRubik.exe.config
+C:\Users\Bence\Source\Repos\Rubik\BacktrackRubik\bin\Debug\BacktrackRubik.exe
+C:\Users\Bence\Source\Repos\Rubik\BacktrackRubik\bin\Debug\BacktrackRubik.pdb
+C:\Users\Bence\Source\Repos\Rubik\BacktrackRubik\bin\Debug\Rubik.dll
+C:\Users\Bence\Source\Repos\Rubik\BacktrackRubik\bin\Debug\Rubik.pdb
+C:\Users\Bence\Source\Repos\Rubik\BacktrackRubik\obj\Debug\BacktrackRubik.csprojResolveAssemblyReference.cache
+C:\Users\Bence\Source\Repos\Rubik\BacktrackRubik\obj\Debug\BacktrackRubik.exe
+C:\Users\Bence\Source\Repos\Rubik\BacktrackRubik\obj\Debug\BacktrackRubik.pdb

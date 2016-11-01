@@ -1,29 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Rubik
+﻿namespace Rubik
 {
     public class Mezo
     {
         /// <summary>
-        /// Adott séma elérési útvonalát tartalmazza.
-        /// </summary>
-        public string Path { get; }
-
-        /// <summary>
         /// Hozzárendeljük a felülethez a képet.
         /// A ciklus végén
         /// </summary>
-        /// <param name="fonalak"></param>
-        /// <param name="prefix"></param>
+        /// <param name="fonalak">Felület színeit tartalmazza</param>
+        /// <param name="prefix">Elérési útvonal</param>
         public Mezo(int[] fonalak, string prefix)
         {
             Path = prefix;
 
-            //sema0
+            // sema0
             if (fonalak[0] == 0 && fonalak[1] == 1 &&
                 fonalak[2] == 2 && fonalak[3] == 3 &&
                 fonalak[4] == 0 && fonalak[5] == 2 &&
@@ -32,8 +21,7 @@ namespace Rubik
                 Path += "/sema0.png";
             }
 
-
-            //sema1
+            // sema1
             if (fonalak[0] == 0 && fonalak[1] == 1 &&
                 fonalak[2] == 3 && fonalak[3] == 2 &&
                 fonalak[4] == 0 && fonalak[5] == 3 &&
@@ -42,8 +30,7 @@ namespace Rubik
                 Path += "/sema1.png";
             }
 
-
-            //sema2
+            // sema2
             if (fonalak[0] == 0 && fonalak[1] == 2 &&
                 fonalak[2] == 1 && fonalak[3] == 3 &&
                 fonalak[4] == 0 && fonalak[5] == 1 &&
@@ -52,7 +39,7 @@ namespace Rubik
                 Path += "/sema2.png";
             }
 
-            //sema3
+            // sema3
             if (fonalak[0] == 0 && fonalak[1] == 2 &&
                 fonalak[2] == 3 && fonalak[3] == 1 &&
                 fonalak[4] == 0 && fonalak[5] == 3 &&
@@ -61,7 +48,7 @@ namespace Rubik
                 Path += "/sema3.png";
             }
 
-            //sema4
+            // sema4
             if (fonalak[0] == 0 && fonalak[1] == 3 &&
                 fonalak[2] == 1 && fonalak[3] == 2 &&
                 fonalak[4] == 0 && fonalak[5] == 1 &&
@@ -70,7 +57,7 @@ namespace Rubik
                 Path += "/sema4.png";
             }
 
-            //sema5
+            // sema5
             if (fonalak[0] == 0 && fonalak[1] == 3 &&
                 fonalak[2] == 2 && fonalak[3] == 1 &&
                 fonalak[4] == 0 && fonalak[5] == 2 &&
@@ -79,7 +66,7 @@ namespace Rubik
                 Path += "/sema5.png";
             }
 
-            //sema6
+            // sema6
             if (fonalak[0] == 1 && fonalak[1] == 0 &&
                 fonalak[2] == 2 && fonalak[3] == 3 &&
                 fonalak[4] == 1 && fonalak[5] == 2 &&
@@ -88,7 +75,7 @@ namespace Rubik
                 Path += "/sema6.png";
             }
 
-            //sema7
+            // sema7
             if (fonalak[0] == 1 && fonalak[1] == 0 &&
                 fonalak[2] == 3 && fonalak[3] == 2 &&
                 fonalak[4] == 1 && fonalak[5] == 3 &&
@@ -97,7 +84,7 @@ namespace Rubik
                 Path += "/sema7.png";
             }
 
-            //sema8
+            // sema8
             if (fonalak[0] == 1 && fonalak[1] == 2 &&
                 fonalak[2] == 0 && fonalak[3] == 3 &&
                 fonalak[4] == 1 && fonalak[5] == 0 &&
@@ -106,7 +93,7 @@ namespace Rubik
                 Path += "/sema8.png";
             }
 
-            //sema9
+            // sema9
             if (fonalak[0] == 1 && fonalak[1] == 2 &&
                 fonalak[2] == 3 && fonalak[3] == 0 &&
                 fonalak[4] == 1 && fonalak[5] == 3 &&
@@ -115,7 +102,7 @@ namespace Rubik
                 Path += "/sema9.png";
             }
 
-            //sema10
+            // sema10
             if (fonalak[0] == 1 && fonalak[1] == 3 &&
                 fonalak[2] == 2 && fonalak[3] == 0 &&
                 fonalak[4] == 1 && fonalak[5] == 2 &&
@@ -124,7 +111,7 @@ namespace Rubik
                 Path += "/sema10.png";
             }
 
-            //sema11
+            // sema11
             if (fonalak[0] == 1 && fonalak[1] == 3 &&
                 fonalak[2] == 0 && fonalak[3] == 2 &&
                 fonalak[4] == 1 && fonalak[5] == 0 &&
@@ -133,8 +120,7 @@ namespace Rubik
                 Path += "/sema11.png";
             }
 
-
-            //sema12
+            // sema12
             if (fonalak[0] == 2 && fonalak[1] == 0 &&
                 fonalak[2] == 1 && fonalak[3] == 3 &&
                 fonalak[4] == 2 && fonalak[5] == 1 &&
@@ -143,7 +129,7 @@ namespace Rubik
                 Path += "/sema12.png";
             }
 
-            //sema13
+            // sema13
             if (fonalak[0] == 2 && fonalak[1] == 0 &&
                 fonalak[2] == 3 && fonalak[3] == 1 &&
                 fonalak[4] == 2 && fonalak[5] == 3 &&
@@ -152,7 +138,7 @@ namespace Rubik
                 Path += "/sema13.png";
             }
 
-            //sema14
+            // sema14
             if (fonalak[0] == 2 && fonalak[1] == 1 &&
                 fonalak[2] == 0 && fonalak[3] == 3 &&
                 fonalak[4] == 2 && fonalak[5] == 0 &&
@@ -161,7 +147,7 @@ namespace Rubik
                 Path += "/sema14.png";
             }
 
-            //sema15
+            // sema15
             if (fonalak[0] == 2 && fonalak[1] == 1 &&
                 fonalak[2] == 3 && fonalak[3] == 0 &&
                 fonalak[4] == 2 && fonalak[5] == 3 &&
@@ -170,7 +156,7 @@ namespace Rubik
                 Path += "/sema15.png";
             }
 
-            //sema16
+            // sema16
             if (fonalak[0] == 2 && fonalak[1] == 3 &&
                 fonalak[2] == 0 && fonalak[3] == 1 &&
                 fonalak[4] == 2 && fonalak[5] == 0 &&
@@ -179,7 +165,7 @@ namespace Rubik
                 Path += "/sema16.png";
             }
 
-            //sema17
+            // sema17
             if (fonalak[0] == 2 && fonalak[1] == 3 &&
                 fonalak[2] == 1 && fonalak[3] == 0 &&
                 fonalak[4] == 2 && fonalak[5] == 1 &&
@@ -188,7 +174,7 @@ namespace Rubik
                 Path += "/sema17.png";
             }
 
-            //sema18
+            // sema18
             if (fonalak[0] == 3 && fonalak[1] == 0 &&
                 fonalak[2] == 1 && fonalak[3] == 2 &&
                 fonalak[4] == 3 && fonalak[5] == 1 &&
@@ -197,7 +183,7 @@ namespace Rubik
                 Path += "/sema18.png";
             }
 
-            //sema19
+            // sema19
             if (fonalak[0] == 3 && fonalak[1] == 0 &&
                 fonalak[2] == 2 && fonalak[3] == 1 &&
                 fonalak[4] == 3 && fonalak[5] == 2 &&
@@ -206,7 +192,7 @@ namespace Rubik
                 Path += "/sema19.png";
             }
 
-            //sema20
+            // sema20
             if (fonalak[0] == 3 && fonalak[1] == 1 &&
                 fonalak[2] == 0 && fonalak[3] == 2 &&
                 fonalak[4] == 3 && fonalak[5] == 0 &&
@@ -215,7 +201,7 @@ namespace Rubik
                 Path += "/sema20.png";
             }
 
-            //sema21
+            // sema21
             if (fonalak[0] == 3 && fonalak[1] == 1 &&
                 fonalak[2] == 2 && fonalak[3] == 0 &&
                 fonalak[4] == 3 && fonalak[5] == 2 &&
@@ -224,7 +210,7 @@ namespace Rubik
                 Path += "/sema21.png";
             }
 
-            //sema22
+            // sema22
             if (fonalak[0] == 3 && fonalak[1] == 2 &&
                 fonalak[2] == 0 && fonalak[3] == 1 &&
                 fonalak[4] == 3 && fonalak[5] == 0 &&
@@ -233,15 +219,19 @@ namespace Rubik
                 Path += "/sema22.png";
             }
 
-            //sema23
+            // sema23
             if (fonalak[0] == 3 && fonalak[1] == 2 &&
                 fonalak[2] == 1 && fonalak[3] == 0 &&
                 fonalak[4] == 3 && fonalak[5] == 1 &&
                 fonalak[6] == 0 && fonalak[7] == 2)
             {
                 Path += "/sema23.png";
-            }
-
+            }            
         }
+
+        /// <summary>
+        /// Adott séma elérési útvonalát tartalmazza.
+        /// </summary>
+        public string Path { get; }
     }
 }

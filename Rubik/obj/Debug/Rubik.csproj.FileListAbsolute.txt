@@ -3,3 +3,8 @@ D:\Projektek\C#\BacktrackRubik\Rubik\bin\Debug\Rubik.pdb
 D:\Projektek\C#\BacktrackRubik\Rubik\obj\Debug\Rubik.csprojResolveAssemblyReference.cache
 D:\Projektek\C#\BacktrackRubik\Rubik\obj\Debug\Rubik.dll
 D:\Projektek\C#\BacktrackRubik\Rubik\obj\Debug\Rubik.pdb
+C:\Users\Bence\Source\Repos\Rubik\Rubik\bin\Debug\Rubik.dll
+C:\Users\Bence\Source\Repos\Rubik\Rubik\bin\Debug\Rubik.pdb
+C:\Users\Bence\Source\Repos\Rubik\Rubik\obj\Debug\Rubik.dll
+C:\Users\Bence\Source\Repos\Rubik\Rubik\obj\Debug\Rubik.pdb
+C:\Users\Bence\Source\Repos\Rubik\Rubik\obj\Debug\Rubik.csprojResolveAssemblyReference.cache

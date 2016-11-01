@@ -1,17 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Rubik
+﻿namespace Rubik
 {
+    using System;
+
+    /// <summary>
+    /// A feladat megoldását végző osztály.
+    /// </summary>
     public class Megoldas
     {
-        int[,] feluletek;
-        int[] forgatasok;
-        int[,] palya;
+        private int[,] feluletek;
 
+        private int[] forgatasok;
+
+        private int[,] palya;
+
+        private int[] elozoElem;
+
+        private int[] mostaniElem;
+
+        /// <summary>
+        /// <see cref="Megoldas"/> konstruktora.
+        /// </summary>
+        /// <param name="feluletek">Felületek tömbje</param>
+        /// <param name="forgatasok">Felületekhez tartozó státuszok</param>
+        /// <param name="palya">Pálya tömbje</param>
         public Megoldas(int[,] feluletek, int[] forgatasok, int[,] palya)
         {
             this.feluletek = feluletek;
@@ -23,24 +34,15 @@ namespace Rubik
         /// Értéket adunk a pálya egyik bizonyos pontjának.
         /// A forgatások tömbben pedig megváltoztatjuk a státuszát.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="feluletSzam"></param>
-        /// <param name="forgatasSzam"></param>
+        /// <param name="y">Magasság</param>
+        /// <param name="x">Szélesség</param>
+        /// <param name="feluletSzam">Hányadik felületet használjuk</param>
+        /// <param name="forgatasSzam">Felület státusza</param>
         public void ErtekAdas(int y, int x, int feluletSzam, int forgatasSzam)
         {
-            palya[y, x] = feluletSzam;
-            forgatasok[feluletSzam] = forgatasSzam;
+            this.palya[y, x] = feluletSzam;
+            this.forgatasok[feluletSzam] = forgatasSzam;
         }
-
-
-        int FeluletSzam = 0;
-        //Adott felületről kérdezzük le a státuszát.
-        int ForgatasSzam = 0;
-
-        int[] ElozoElem;
-        int[] MostaniElem;
-        int valami = 0;
 
         /// <summary>
         /// A pályát feltöltjük a megadott feltételeknek megfelelően.
@@ -50,41 +52,42 @@ namespace Rubik
             int x = 0;
             int y = 0;
 
-            ElozoElem = new int[8];
-            MostaniElem = new int[8];
+            elozoElem = new int[8];
+            mostaniElem = new int[8];
 
-            //Megadjuk a kezdő elemet
-            ErtekAdas(x, y, 0, -1);
+            // Megadjuk a kezdő elemet
+            ErtekAdas(y, x, 0, -1);
 
             while (x > -1 && y > -1)
             {
-                //A pálya adott pontjából kiszedjük az információt, hogy hányadik felületet tartalmazza.
-                FeluletSzam = palya[y, x];
-                //Adott felületről kérdezzük le a státuszát.
-                ForgatasSzam = forgatasok[FeluletSzam];
+                // A pálya adott pontjából kiszedjük az információt, hogy hányadik felületet tartalmazza.
+                int feluletSzam = palya[y, x];
 
-                while (FeluletSzam < 24)
+                // Adott felületről kérdezzük le a státuszát.
+                int forgatasSzam = forgatasok[feluletSzam];
+
+                while (feluletSzam < 24)
                 {
-                    //Azt vizsgáljuk, hogy nem forgattuk-e már körbe az adott felületet.
-                    if (FeluletSzam > -1 && ForgatasSzam < 3)
+                    // Azt vizsgáljuk, hogy nem forgattuk-e már körbe az adott felületet.
+                    if (feluletSzam > -1 && forgatasSzam < 3)
                     {
-                        ForgatasSzam++;
+                        forgatasSzam++;
                     }
                     else
                     {
-                        //Ha nem tudjuk elhelyezni a felületet akkor a státuszát -1-re állítjuk.
-                        if (FeluletSzam != -1)
+                        // Ha nem tudjuk elhelyezni a felületet akkor a státuszát -1-re állítjuk.
+                        if (feluletSzam != -1)
                         {
-                            forgatasok[FeluletSzam] = -1;
-                            ForgatasSzam = 0;
+                            forgatasok[feluletSzam] = -1;
+                            forgatasSzam = 0;
                         }
 
-                        //Egy olyan felületet keresünk, ami nincs még fel használva.
+                        // Egy olyan felületet keresünk, ami nincs még fel használva.
                         do
                         {
-                            FeluletSzam++;
+                            feluletSzam++;
 
-                            if (FeluletSzam == 24)
+                            if (feluletSzam == 24)
                             {
                                 palya[y, x] = -1;
                                 x--;
@@ -94,50 +97,55 @@ namespace Rubik
                                     x = 2;
                                     y--;
                                 }
-                                if (y == -1) // vége az algoritmusnak
+
+                                // vége az algoritmusnak
+                                if (y == -1)
                                 {
                                     Console.WriteLine("vége");
                                     Console.WriteLine();
                                 }
+
                                 break;
                             }
-
-                        } while (forgatasok[FeluletSzam] > -1);
+                        } while (forgatasok[feluletSzam] > -1);
                     }
 
-                    //Ha egyik felület sem volt megfelelő, akkor kilépünk a ciklusból.
-                    if (FeluletSzam == 24)
+                    // Ha egyik felület sem volt megfelelő, akkor kilépünk a ciklusból.
+                    if (feluletSzam == 24)
                     {
                         continue;
                     }
 
-                    //Használva van-e az aktuális felület hátoldala.
-                    //if ((FeluletSzam < 12 && forgatasok[FeluletSzam + 12] > -1) ||
-                    //    (FeluletSzam > 11 && forgatasok[FeluletSzam - 11] > -1))
-                    //{
-                    //    continue;
-                    //}
+                    // Használva van-e az aktuális felület hátoldala.
+                    if ((feluletSzam < 12 && forgatasok[feluletSzam + 12] > -1) ||
+                        (feluletSzam > 11 && forgatasok[feluletSzam - 11] > -1))
+                    {
+                        continue;
+                    }
 
                     if (x > 0)
                     {
+                        // Kimentjük egy másk tömbbe az előző és mostani elemek színeit.
                         for (int i = 0; i < feluletek.GetLength(1); i++)
                         {
-                            ElozoElem[i] = feluletek[palya[y, x - 1], i];
-                            MostaniElem[i] = feluletek[FeluletSzam, i];
+                            elozoElem[i] = feluletek[palya[y, x - 1], i];
+                            mostaniElem[i] = feluletek[feluletSzam, i];
                         }
 
+                        // Forgatjuk a felületeket
                         for (int j = 0; j < forgatasok[palya[y, x - 1]]; j++)
                         {
-                            Forgato.ForgatEgyFelulet(ElozoElem);
+                            Forgato.ForgatEgyFelulet(elozoElem);
                         }
 
-                        for (int k = 0; k < ForgatasSzam; k++)
+                        for (int k = 0; k < forgatasSzam; k++)
                         {
-                            Forgato.ForgatEgyFelulet(MostaniElem);
+                            Forgato.ForgatEgyFelulet(mostaniElem);
                         }
 
-                        if ((ElozoElem[2] != MostaniElem[7] ||
-                             ElozoElem[3] != MostaniElem[6]))
+                        // Ellenőrizzük, hogy összeillik-e a 2 felület
+                        if (elozoElem[2] != mostaniElem[7] ||
+                            elozoElem[3] != mostaniElem[6])
                         {
                             continue;
                         }
@@ -145,31 +153,34 @@ namespace Rubik
 
                     if (y > 0)
                     {
+                        // Kimentjük egy másk tömbbe az előző és mostani elemek színeit.
                         for (int i = 0; i < feluletek.GetLength(1); i++)
                         {
-                            ElozoElem[i] = feluletek[palya[y - 1, x], i];
-                            MostaniElem[i] = feluletek[FeluletSzam, i];
+                            elozoElem[i] = feluletek[palya[y - 1, x], i];
+                            mostaniElem[i] = feluletek[feluletSzam, i];
                         }
 
+                        // Forgatjuk a felületeket
                         for (int j = 0; j < forgatasok[palya[y - 1, x]]; j++)
                         {
-                            Forgato.ForgatEgyFelulet(ElozoElem);
+                            Forgato.ForgatEgyFelulet(elozoElem);
                         }
 
-                        for (int k = 0; k < ForgatasSzam; k++)
+                        for (int k = 0; k < forgatasSzam; k++)
                         {
-                            Forgato.ForgatEgyFelulet(MostaniElem);
+                            Forgato.ForgatEgyFelulet(mostaniElem);
                         }
 
-                        if (y > 0 && (ElozoElem[5] != MostaniElem[0] ||
-                                      ElozoElem[4] != MostaniElem[1]))
+                        // Ellenőrizzük, hogy összeillik-e a 2 felület
+                        if (elozoElem[5] != mostaniElem[0] ||
+                            elozoElem[4] != mostaniElem[1])
                         {
                             continue;
                         }
                     }
 
-                    //Elhelyezzük az aktuális felületet.
-                    ErtekAdas(y, x, FeluletSzam, ForgatasSzam);
+                    // Elhelyezzük az aktuális felületet.
+                    ErtekAdas(y, x, feluletSzam, forgatasSzam);
 
                     x++;
 
@@ -177,24 +188,22 @@ namespace Rubik
                     {
                         x = 0;
                         y++;
-                        //PalyaKeszito.Kiiras(palya);
                     }
 
-                    if (y == 3)
-                    { // van megoldás
+                    // van megoldás
+                    if (y == 3) 
+                    {
                         Console.WriteLine("megvan");
                         LapKeszito.Kiiras(feluletek);
-                        PalyaKeszito.Kiiras(palya);
                         Forgato.Kiiras(forgatasok);
+                        PalyaKeszito.Kiiras(palya);
                         Console.WriteLine();
-
-                        //y--;
 
                         return;
                     }
 
-                    FeluletSzam = -1;
-                    ForgatasSzam = 0;
+                    feluletSzam = -1;
+                    forgatasSzam = 0;
                     palya[y, x] = -1;
                 }
             }
